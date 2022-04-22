@@ -7,6 +7,8 @@ for (let i = 0; i < 25; i++) {
 
     div.onclick=()=>{
         div.classList.toggle("red")
+
+        div.classList.toggle("boton")
     }
 
     // div.onmouseover=()=>{

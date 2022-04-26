@@ -20,3 +20,5 @@ elements.forEach(id=>{
 // for(let i = 0;i<dropzones.length;i++){
 //     let dropzone = dropzones[i]
 // }
+
+// hacer funcional los dropzones y elementos de forma dinámica

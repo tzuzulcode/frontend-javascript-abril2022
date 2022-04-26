@@ -17,7 +17,7 @@ dropzone.ondrop = ()=>{
     dropzone.classList.add("dropped")
 
     dropzone.appendChild(element)
-    texto.style.visibility="visible"
+    // texto.style.position = "static"
 
     setTimeout(()=>{
         dropzone.classList.remove("dropped")
@@ -30,26 +30,25 @@ dropzone2.ondragover = (event)=>{
 
 dropzone2.ondrop = (event)=>{
     dropzone2.appendChild(element)
-    texto.style.visibility=true
+    // texto.style.position = "static"
 }
 
 texto.ondragstart = (event)=>{
-    console.log()
     element = texto
-    texto.style.visibility = false
+    texto.style.position = "absolute"
 }
 
-// texto.ondrag = (event)=>{
-//     event.preventDefault()
+texto.ondrag = (event)=>{
+    texto.style.opacity = 0
+    texto.style.left = event.pageX+'px'
+    texto.style.top = event.pageY+'px'
     
-//     texto.style.position = "absolute"
-//     texto.style.left = event.pageX+'px'
-//     texto.style.top = event.pageY+'px'
-// }
+}
 
-// texto.ondragend = (event)=>{
-//     texto.style.visibility="visible"
-// }
+texto.ondragend = (event)=>{
+    texto.style.opacity=1
+    // texto.style.position = "static"
+}
 
 texto.ontouchmove = (event)=>{
     let touchLocation = event.targetTouches[0]
@@ -57,9 +56,5 @@ texto.ontouchmove = (event)=>{
     texto.style.position = "absolute"
     texto.style.left = touchLocation.pageX+'px'
     texto.style.top = touchLocation.pageY+'px'
-
-}
-
-texto.ontouchend = (event)=>{
 
 }

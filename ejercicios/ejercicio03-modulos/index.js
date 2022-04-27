@@ -1,24 +1,12 @@
-const dropzones = [1,2,3,4,5]
-const elements = [1,2,3,4,5]
+import { createDropzones, createElements } from "./js/createElements.js"
+
+const dropzones = [1,2,3]
+const elements = [1,2,3,4,5,6,7,8]
 const container = document.getElementById("app")
 
+createDropzones(dropzones,container)
 
-dropzones.forEach(id=>{
-    const div = document.createElement("div")
-    div.className = "dropzone"
-    container.appendChild(div)
-})
+createElements(elements,container)
 
-elements.forEach(id=>{
-    const firstDiv = container.firstChild
-    const p = document.createElement("p")
-    p.innerText = id
-    p.className = "element"
-    firstDiv.appendChild(p)
-})
 
-// for(let i = 0;i<dropzones.length;i++){
-//     let dropzone = dropzones[i]
-// }
-
-// hacer funcional los dropzones y elementos de forma dinámica
+// RETO: Investigar como reordenar elementos de html

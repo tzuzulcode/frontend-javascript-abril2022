@@ -5,9 +5,7 @@ const items = lista.querySelectorAll("li")
 const itemsArray = [...items] // Operador spread
 
 let dragging
-let draggingIndex
 let draggedOver
-let draggedOverIndex
 
 itemsArray.forEach((item,index)=>{
     item.draggable = true
@@ -20,21 +18,18 @@ itemsArray.forEach((item,index)=>{
     item.ondragover=(e)=>{
         e.preventDefault()
         draggedOver = e.target
-        draggedOverIndex = index
-        console.log(index)
     }
     item.ondrop=()=>{
         
-        const reordered = [...itemsArray]
-        reordered[draggedOverIndex] = dragging
-        reordered[draggingIndex] = draggedOver
+        let index1 = itemsArray.findIndex((element)=>element==dragging)
+        let index2 = itemsArray.findIndex((element)=>element==draggedOver)
 
+        itemsArray[index1] = itemsArray[index2]
+        itemsArray[index2] = dragging
 
-        for (let item of reordered){
+        for (let item of itemsArray){
             lista.appendChild(item)
         }
-
-        // Solicionar el problema con el index
     
     }
 })

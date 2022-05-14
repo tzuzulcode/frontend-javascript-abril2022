@@ -57,10 +57,4 @@ formulario.onsubmit = (event)=>{
         emailValidation.innerText = "El email no es valido 👎"
     }
 
-    // Reto: Crear una regex para validar el email
-    // Reto: Implementar la regex en el formulario con JS
-
 }
-
-
-// Reto: Poner estilos al formulario

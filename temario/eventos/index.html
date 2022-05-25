@@ -8,6 +8,21 @@
 </head>
 <body>
     <button id="boton">Presionar</button>
+    <div id="div">
+        <!-- Si yo presiono el parrafo, esto hará bubbling hasta el elemento superior -->
+        <div>
+            <div id="div2">
+                <div>
+                    <p>Presionar para hacer algo</p> 
+                </div>
+            </div>
+        </div>
+    </div>
+    <form id="form">
+        <div id="form-div">
+            <p id="form-p">Parrafo</p>
+        </div>
+    </form>
     <script src="./index.js"></script>
 </body>
 </html>

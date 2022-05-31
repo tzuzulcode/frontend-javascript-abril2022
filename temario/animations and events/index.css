@@ -1,0 +1,43 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 2rem;
+}
+
+.notification{
+    background-color: #212121;
+    padding: 20px;
+    color: white;
+    position: relative;
+}
+
+.notification button{
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: 0 transparent;
+    background-color: cornflowerblue;
+}
+
+.notification button:hover{
+    background-color: aqua;
+    cursor: pointer;
+}
+
+.notification a{
+    text-decoration: none;
+    color: aqua;
+}
+
+.transparent{
+    opacity: 0;
+}
+
+.fadeable{
+    transition: opacity 0.5s ease-in;
+}

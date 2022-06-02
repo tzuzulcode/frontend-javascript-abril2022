@@ -17,6 +17,10 @@
     stroke-width: 3;
 }
 
+#clock .hands .secondhand{
+    stroke: red;
+    stroke-width: 1;
+}
 #clock .hands .hourhand{
     stroke: blue;
 }

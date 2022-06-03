@@ -1,0 +1,21 @@
+.video-container{
+    width: 50%;
+    position: relative;
+}
+
+#video{
+    width: 100%;
+    position: relative;
+}
+
+#play{
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+}
+
+#control{
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+}

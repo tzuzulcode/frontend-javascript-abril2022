@@ -10,11 +10,14 @@
 <body>
     <div class="video-container">
         <video id="video" controls>
-            <source src="./assets/2022-06-02 18-10-24.mp4" type="video/mp4">
-            <p>Tu navegador no soporta el video <a href="./assets/2022-06-02 18-10-24.mp4">Descargar</a></p>
+            <source src="./assets/Intro.mp4" type="video/mp4">
+            <p>Tu navegador no soporta el video <a href="./assets/Intro.mp4">Descargar</a></p>
         </video>
+        <button id="backwardSeconds">-10</button>
         <button id="play">Play/Pause</button>
-        <input type="range" id="control">
+        <button id="forwardSeconds">+10</button>
+        <button id="fullScreen">FullScreen</button>
+        <input type="range" id="control" min="0" max="100" step="0.1" value="0">
     </div>
     <audio id="audio" controls src="./assets/Fix You.mp3"></audio>
 

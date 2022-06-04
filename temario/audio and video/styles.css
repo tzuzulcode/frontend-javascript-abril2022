@@ -10,12 +10,29 @@
 
 #play{
     position: absolute;
-    left: 10px;
+    left: 50px;
     bottom: 10px;
 }
 
 #control{
     position: absolute;
     left: 50%;
+    bottom: 10px;
+}
+
+#backwardSeconds{
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+}
+
+#forwardSeconds{
+    position: absolute;
+    left: 140px;
+    bottom: 10px;
+}
+#fullScreen{
+    position: absolute;
+    right: 10px;
     bottom: 10px;
 }

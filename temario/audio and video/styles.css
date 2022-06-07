@@ -6,12 +6,27 @@
 #video{
     width: 100%;
     position: relative;
+    display: block;
+    z-index: 1;
 }
 
-#play{
+.video-buttons{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    height: 40px;
+    width: 50%;
+    z-index: 2;
+}
+
+/* #play{
     position: absolute;
     left: 50px;
     bottom: 10px;
+    top: 50px;
+    width: 30px;
+    height: 30px;
+    z-index: 100;
 }
 
 #control{
@@ -35,4 +50,27 @@
     position: absolute;
     right: 10px;
     bottom: 10px;
+} */
+
+#video:fullscreen{
+    z-index: 1;
+}
+
+#video::-webkit-media-controls{
+    display: none;
+}
+
+.video-buttons:fullscreen{
+    position: fixed;
+}
+
+.video-buttons:-moz-full-screen{
+    position: fixed;
+}
+
+.video-buttons:-ms-fullscreen{
+    position: fixed;
+}
+.video-buttons:-webkit-full-screen{
+    position: fixed;
 }

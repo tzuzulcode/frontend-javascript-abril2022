@@ -1,10 +1,13 @@
 const video = document.getElementById("video")
+const videoContainer = document.getElementById("video-container")
 const audio = document.getElementById("audio")
 const play = document.getElementById("play")
 const control = document.getElementById("control")
 const backwardSeconds = document.getElementById("backwardSeconds")
 const forwardSeconds = document.getElementById("forwardSeconds")
 const fullScreen = document.getElementById("fullScreen")
+
+let onFullscreen = false
 
 let duration
 
@@ -39,8 +42,15 @@ forwardSeconds.onclick = () =>{
 }
 
 fullScreen.onclick = ()=>{
-    video.requestFullscreen()
+    if(onFullscreen){
+        onFullscreen = false
+        document.exitFullscreen()
+    }else{
+        onFullscreen = true
+        videoContainer.requestFullscreen()
+    }
 }
+    
 
 play.onclick = ()=>{
     if(video.paused){

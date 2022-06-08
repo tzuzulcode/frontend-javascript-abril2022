@@ -74,3 +74,36 @@
 .video-buttons:-webkit-full-screen{
     position: fixed;
 }
+
+
+.audio-buttons{
+    position: fixed;
+    align-items: center;
+    display: flex;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(12, 12, 12);
+    width: 100vw;
+    height: 100px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.audio-buttons #controlAudio{
+    appearance: none;
+    width: 100%;
+    background-color: rgb(66, 66, 66);
+    height: 10px;
+    margin: 0 20px;
+}
+
+
+.audio-buttons #controlAudio::-webkit-slider-thumb{
+    appearance: none;
+    background-color: rgb(41, 115, 131);
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+}
+
+

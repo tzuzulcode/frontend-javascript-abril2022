@@ -8,7 +8,7 @@ console.log(documentHeight)
 console.log(viewportHeight)
 
 if(window.IntersectionObserver){
-    alert("Intersection observer available")
+    console.log("Intersection observer available")
 }
 
 // scrollTo()
@@ -46,6 +46,9 @@ function onIntersection(changes){
     console.log(changes)
     for(let change of changes){
         if(change.isIntersecting){
+            if(change.intersectionRatio==1){
+                console.log("Llegaste al final")
+            }
             goUpBtn.style.display = "block"
         }else{
             goUpBtn.style.display = "none"

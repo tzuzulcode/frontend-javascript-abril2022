@@ -1,18 +1,35 @@
+const canvasWidth = window.innerWidth
+const canvasHeight = window.innerHeight-4
+console.log(canvasWidth)
+console.log(canvasHeight)
+
+let count = 0
+
 function setup(){
-    createCanvas(1920,1080)
+    createCanvas(canvasWidth,canvasHeight)
+    background(205, 237, 253)
+    rectMode(CENTER)
 }
 
 function draw(){
-    background(204)
-    // ellipse(50,50,80,80) // (left,top,width,height)
-    // if(mouseIsPressed){
-    //     fill(0)
-    // }else{
-    //     fill(255)
-    // }
-    // ellipse(mouseX,mouseY,80,80)
-    // point(240,60)
-    line(20,50,420,110)
-    triangle(10,10,300,300,150,300)
-    rect(10,10,100,10,100,110,100,110)
+    const x = canvasWidth/2 + count
+    const y = canvasHeight/2 + count
+
+    // point(50,100)
+    fill(182, 220, 254)
+    // stroke(0,0,0,0)
+    noStroke()
+    // noFill()
+    rect(x,y,100+count,100+count) // rect(x,y,width,height)
+
+    stroke(0)
+    strokeWeight(2)
+    fill(222, 197, 227)
+    ellipse(x, y, 30+count, 30+count)
+
+    fill(129, 247, 229)
+    noStroke()
+    rect(x,y,20+count,20+count)
+
+    count = count + 0.1
 }

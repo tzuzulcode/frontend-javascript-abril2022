@@ -16,7 +16,7 @@ let random3
 function setup(){
     createCanvas(canvasWidth,canvasHeight)
     rectMode(CENTER)
-    random1 = random()
+    random1 = random() // Funcion de p5
     random2 = random(10)
     random3 = random(100,1000)
     frameRate(10)

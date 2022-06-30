@@ -1,0 +1,26 @@
+body {
+  color: #123;
+  background-color: #ddd;
+}
+
+p {
+  border: 2px #123 solid;
+  color: #123;
+}
+
+.article h2 {
+  font-weight: bold;
+  font-size: 3rem;
+}
+.article p {
+  line-height: 1em;
+}
+.article img {
+  float: left;
+  border-radius: 30px;
+}
+.article div p {
+  color: aqua;
+}
+
+/*# sourceMappingURL=style.css.map */

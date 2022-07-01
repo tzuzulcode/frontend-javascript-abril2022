@@ -1,0 +1,1 @@
+{"version":3,"sourceRoot":"","sources":["importaciones/responsive.scss","index.scss","partials/_colors.scss","partials/_typography.scss"],"names":[],"mappings":"AAAA;EACI;EACA;;;AAsBJ;EACI;EACA;EACA;;AACA;EAJJ;IAKQ;;;AAEJ;EAPJ;IAQQ;;;;AC5BR;EACI,kBCDQ;;;ADIZ;EACI;;;AAGJ;EACI;EACA;EACA;EACA;;;AAGJ;EACI,MEpBI","file":"index.css"}

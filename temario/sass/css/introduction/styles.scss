@@ -1,0 +1,58 @@
+$fontColor: #123;
+$backgroundColor: #ddd;
+
+body{
+    // $backgroundColor: #111;
+    color:$fontColor;
+    background-color: $backgroundColor;
+}
+
+
+// Variables con diferentes tipos: Numbers,string,boolean, colors, valores separados por coma
+$values: 10px 20px,'Tahoma','Arial';
+$boolean: true;
+
+
+$borderDeclaration: 2px $fontColor solid;
+$color_light:#ddd;
+
+p{
+    border: $borderDeclaration;
+    color: $fontColor;
+}
+
+// .article h2{
+//     font-weight: bold;
+//     font-size: 3rem;
+// }
+
+// .article p{
+//     line-height: 1em;
+
+// }
+
+// .article img{
+//     float: left;
+//     border-radius: 30px;
+// }
+
+// Nesting:
+
+.article{
+    h2{
+        font-weight: bold;
+        font-size: 3rem;
+    }
+    p{
+        line-height: 1em;
+    }
+    img{
+        float: left;
+        border-radius: 30px;
+    }
+    div{
+        p{
+            color: aqua;
+        }
+    }
+}

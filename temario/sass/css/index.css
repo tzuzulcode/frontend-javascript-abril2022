@@ -1,6 +1,16 @@
 .container {
-  width: 80%;
+  width: 95%;
   margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 90%;
+  }
+}
+@media (min-width: 1024px) {
+  .container {
+    width: 80%;
+  }
 }
 
 .grid {
@@ -27,15 +37,44 @@ img {
   width: 100%;
 }
 
-.card {
+.card, .success {
   background-color: white;
   padding: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
   border-radius: 20px;
   box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
 .title {
   font: 3rem "Fira Sans", sans-serif;
+}
+
+.notification, .error, .critical-error, .super-critical-error, .success {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background-color: white;
+  padding: 0px 30px;
+}
+
+.success {
+  border-radius: 7px;
+  top: 100px;
+  background-color: rgb(197, 243, 197);
+}
+
+.error, .critical-error, .super-critical-error {
+  top: 200px;
+  background-color: rgb(243, 197, 197);
+}
+
+.critical-error, .super-critical-error {
+  background-color: rgb(237, 138, 138);
+}
+.critical-error:hover, .super-critical-error {
+  background-color: rgb(243, 197, 197);
 }
 
 /*# sourceMappingURL=index.css.map */

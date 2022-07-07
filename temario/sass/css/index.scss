@@ -3,6 +3,7 @@
 
 
 @mixin roundedEdges($radius:5px) {
+    // Vendor prefixes
     -webkit-border-radius: $radius;
     -moz-border-radius: $radius;
     -ms-border-radius: $radius;

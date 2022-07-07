@@ -1,4 +1,6 @@
 const path = require("path")
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin")
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 
 module.exports = {
     // watch:true,
@@ -7,6 +9,12 @@ module.exports = {
         filename:"index.js",
         path:path.resolve(__dirname,'build')
     },
+    optimization:{
+        minimizer:[
+            new CssMinimizerPlugin()
+        ]
+    },
+    plugins:[ new CssMinimizerPlugin(), new MiniCssExtractPlugin()],
     module:{
         rules:[
             {
@@ -18,6 +26,47 @@ module.exports = {
                         presets:['@babel/preset-env']
                     }
                 }
+            },
+            {
+                test:/\.css$/i,
+                use: [
+                    // 'style-loader',
+                    MiniCssExtractPlugin.loader,
+                    {loader:'css-loader', options:{importLoaders:1}},
+                    {
+                        loader:'postcss-loader',
+                        options:{
+                            postcssOptions: {
+                                plugins:[
+                                    require('autoprefixer')({
+                                        overrideBrowserslist:['last 3 versions']
+                                    })
+                                ]
+                            }
+                        }
+                    },
+                ]
+            },
+            {
+                test:/\.scss$/i,
+                use: [
+                    // 'style-loader',
+                    MiniCssExtractPlugin.loader,
+                    {loader:'css-loader', options:{importLoaders:1}},
+                    {
+                        loader:'postcss-loader',
+                        options:{
+                            postcssOptions: {
+                                plugins:[
+                                    require('autoprefixer')({
+                                        overrideBrowserslist:['last 3 versions']
+                                    })
+                                ]
+                            }
+                        }
+                    },
+                    'sass-loader'
+                ]
             }
         ]
     }

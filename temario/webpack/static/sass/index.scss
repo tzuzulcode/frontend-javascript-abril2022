@@ -1,0 +1,7 @@
+$primaryColor: #40c9ff;
+$secondaryColor: #00ff87;
+$gradient: linear-gradient(to right, $primaryColor, $secondaryColor);
+
+body{
+    background-image: $gradient;
+}

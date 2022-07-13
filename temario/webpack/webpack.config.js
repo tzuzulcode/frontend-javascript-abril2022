@@ -7,7 +7,8 @@ module.exports = {
     entry:"./src/index.js",
     output:{
         filename:"index.js",
-        path:path.resolve(__dirname,'build')
+        path:path.resolve(__dirname,'build'),
+        assetModuleFilename: 'assets/[name][ext]'
     },
     optimization:{
         minimizer:[
@@ -32,7 +33,12 @@ module.exports = {
                 use: [
                     // 'style-loader',
                     MiniCssExtractPlugin.loader,
-                    {loader:'css-loader', options:{importLoaders:1}},
+                    {
+                        loader:'css-loader', 
+                        options:{
+                            importLoaders:1
+                        }
+                    },
                     {
                         loader:'postcss-loader',
                         options:{
@@ -52,7 +58,12 @@ module.exports = {
                 use: [
                     // 'style-loader',
                     MiniCssExtractPlugin.loader,
-                    {loader:'css-loader', options:{importLoaders:1}},
+                    {
+                        loader:'css-loader', 
+                        options:{
+                            importLoaders:1,
+                        }
+                    },
                     {
                         loader:'postcss-loader',
                         options:{
@@ -67,7 +78,11 @@ module.exports = {
                     },
                     'sass-loader'
                 ]
-            }
+            },
+            {
+                test:/\.(png|jpe?g|svg|gif|webp)$/,
+                type: 'asset/resource',
+            },
         ]
     }
 }

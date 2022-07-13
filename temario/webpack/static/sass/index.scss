@@ -3,5 +3,6 @@ $secondaryColor: #00ff87;
 $gradient: linear-gradient(to right, $primaryColor, $secondaryColor);
 
 body{
-    background-image: $gradient;
+    // background-image: $gradient;
+    background-image: url('../images/background.jpeg');
 }

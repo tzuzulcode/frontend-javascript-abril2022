@@ -1,11 +1,17 @@
 const path = require("path")
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     // watch:true,
+    // entry:{
+    //     index:"./src/index.js",
+    //     another:"./src/saludar.js"
+    // },
     entry:"./src/index.js",
     output:{
+        // filename:"[name].bundle.js",
         filename:"index.js",
         path:path.resolve(__dirname,'build'),
         assetModuleFilename: 'assets/[name][ext]'
@@ -15,7 +21,13 @@ module.exports = {
             new CssMinimizerPlugin()
         ]
     },
-    plugins:[ new CssMinimizerPlugin(), new MiniCssExtractPlugin()],
+    devServer:{
+        port: 5500,
+        static:{
+            directory:path.resolve(__dirname,'build')
+        }
+    },
+    plugins:[ new CssMinimizerPlugin(), new MiniCssExtractPlugin(), new HtmlWebpackPlugin()],
     module:{
         rules:[
             {

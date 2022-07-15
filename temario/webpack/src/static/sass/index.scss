@@ -4,5 +4,12 @@ $gradient: linear-gradient(to right, $primaryColor, $secondaryColor);
 
 body{
     // background-image: $gradient;
-    background-image: url('../images/background.jpeg');
+    // background-image: url('../images/background.jpeg');
+    margin: 0;
+    padding: 0;
+}
+
+#scene{
+    width: 100vw;
+    height: 100vh;
 }

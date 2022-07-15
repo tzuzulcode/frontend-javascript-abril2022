@@ -16,17 +16,7 @@
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _saludar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./saludar */ \"./src/saludar.js\");\n/* harmony import */ var _static_sass_index_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./static/sass/index.scss */ \"./src/static/sass/index.scss\");\n // import lib from \"../static/css/lib.css\"\n\n\nvar nombre = \"Juanito\";\nconsole.log(\"Hola, mi nombre es: \".concat(nombre));\n(0,_saludar__WEBPACK_IMPORTED_MODULE_0__.saludar)(); // Lazy loading\n\nif (document.getElementById(\"scene\")) {\n  __webpack_require__.e(/*! import() */ \"vendors-node_modules_three_build_three_module_js\").then(__webpack_require__.bind(__webpack_require__, /*! three */ \"./node_modules/three/build/three.module.js\")).then(function (Three) {\n    var scene = new Three.Scene();\n  });\n}\n\n//# sourceURL=webpack://webpack-js/./src/index.js?");
-
-/***/ }),
-
-/***/ "./src/saludar.js":
-/*!************************!*\
-  !*** ./src/saludar.js ***!
-  \************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"saludar\": () => (/* binding */ saludar)\n/* harmony export */ });\nfunction saludar() {\n  alert(\"Hola, esto es Webpack\");\n}\n\n//# sourceURL=webpack://webpack-js/./src/saludar.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _static_sass_index_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./static/sass/index.scss */ \"./src/static/sass/index.scss\");\n// import lib from \"../static/css/lib.css\"\n // import init from \"./scene\"\n// Lazy loading\n\nvar sceneElement = document.getElementById(\"scene\");\n\nif (sceneElement) {\n  __webpack_require__.e(/*! import() */ \"vendors-node_modules_three_build_three_module_js\").then(__webpack_require__.bind(__webpack_require__, /*! three */ \"./node_modules/three/build/three.module.js\")).then(function (Three) {\n    var scene = new Three.Scene();\n    var width = window.innerWidth;\n    var height = window.innerHeight;\n    var aspectRatio = width / height;\n    var camera = new Three.PerspectiveCamera(45, aspectRatio, 0.1, 1000);\n    var renderer = new Three.WebGLRenderer();\n    renderer.setClearColor(new Three.Color(0x000000));\n    renderer.setSize(width, height);\n    var axes = new Three.AxesHelper(20);\n    scene.add(axes);\n    var planeGeometry = new Three.PlaneGeometry(40, 20);\n    var planeMaterial = new Three.MeshBasicMaterial({\n      color: 0xAAAAAA\n    });\n    var plane = new Three.Mesh(planeGeometry, planeMaterial);\n    plane.rotation.x = -0.50 * Math.PI; // plane.rotation.y = 0.1 * Math.PI\n\n    plane.position.set(0, 0, 0);\n    scene.add(plane); //Creando cubo\n\n    var cubeGeometry = new Three.BoxGeometry(4, 4, 4);\n    var cubeMaterial = new Three.MeshBasicMaterial({\n      color: 0xFF0000,\n      wireframe: true\n    });\n    var cube = new Three.Mesh(cubeGeometry, cubeMaterial);\n    cube.position.set(-4, 3, 0);\n    scene.add(cube); // Moviendo camera:\n\n    camera.position.set(30, 10, -25);\n    camera.lookAt(scene.position);\n    sceneElement.appendChild(renderer.domElement);\n    renderer.render(scene, camera);\n  });\n}\n\n//# sourceURL=webpack://webpack-js/./src/index.js?");
 
 /***/ }),
 

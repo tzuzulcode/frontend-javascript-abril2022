@@ -1,7 +1,7 @@
 const path = require("path")
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+// const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     // watch:true,
@@ -27,7 +27,7 @@ module.exports = {
             directory:path.resolve(__dirname,'build')
         }
     },
-    plugins:[ new CssMinimizerPlugin(), new MiniCssExtractPlugin(), new HtmlWebpackPlugin()],
+    plugins:[ new CssMinimizerPlugin(), new MiniCssExtractPlugin()/*, new HtmlWebpackPlugin()*/],
     module:{
         rules:[
             {
